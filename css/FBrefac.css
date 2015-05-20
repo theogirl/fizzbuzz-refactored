@@ -4,4 +4,7 @@
 .answer {
 	color: deeppink;
 	font-size: 1.5em;
+	max-width: 600px;
+	margin: 0 auto;
+
 }
