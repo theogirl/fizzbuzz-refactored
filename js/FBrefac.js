@@ -1,19 +1,26 @@
 $(document).ready(function() {
 	
-	var x = prompt('Please enter a number between 1 and 100');
-	var y = parseInt(x);
-	if (y === '') { // make sure input is not empty
-		alert('Please enter something!');
+	var x = prompt('Please enter a number');
+
+	if (x == '') { // make sure input is not empty
+		alert('Please actually enter something!');
 		location.reload();
 	}
-	if (y % 1 !== 0) { // make sure input is not a decimal value
-		alert('Please enter an integer!');
+	else if (x % 1 !== 0) { // make sure input is not a decimal value
+		alert('Please enter an integer, no decimals!!');
 		location.reload();
 	}
-	if (y < 1) { // make sure input is not 0 or negative
-		alert('I said, Please enter a number between 1 and 100!');
+	else if (x < 0) { // make sure input is not a negative value
+		alert('Please enter a number between 1 and 100 only!');
 		location.reload();
 	}
+	else if (x > 100) { // make sure input is not over 100
+		alert('Please enter a number between 1 and 100 only!');
+		location.reload();
+	}
+	else {
+		var y = parseInt(x);
+	};
 
 	var values = new Array();
 
@@ -29,7 +36,7 @@ $(document).ready(function() {
       		values.push(' Buzz');
     	}
     	else {
-      		values.push(' ' +i);
+      		values.push(' '+i);
     	}
 
     	} //end loop
